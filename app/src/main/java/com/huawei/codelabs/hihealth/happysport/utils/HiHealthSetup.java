@@ -1,3 +1,4 @@
+
 package com.huawei.codelabs.hihealth.happysport.utils;
 
 import android.app.Activity;
@@ -9,19 +10,10 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.huawei.codelabs.hihealth.happysport.viewmodels.MainViewModel;
-import com.huawei.hms.hihealth.data.Scopes;
-import com.huawei.hms.support.api.entity.auth.Scope;
 import com.huawei.hms.support.hwid.HuaweiIdAuthAPIManager;
-import com.huawei.hms.support.hwid.HuaweiIdAuthManager;
-import com.huawei.hms.support.hwid.request.HuaweiIdAuthParams;
-import com.huawei.hms.support.hwid.request.HuaweiIdAuthParamsHelper;
 import com.huawei.hms.support.hwid.result.AuthHuaweiId;
 import com.huawei.hms.support.hwid.result.HuaweiIdAuthResult;
 import com.huawei.hms.support.hwid.service.HuaweiIdAuthService;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Setup environment.
@@ -31,13 +23,19 @@ import java.util.List;
  */
 public class HiHealthSetup {
     private static final String TAG = "HiHealthSetup";
+
     private static final int REQUEST_CODE_LOGIN = 3624;
+
     private static final int REQUEST_CODE_PERMISSION = 4727;
+
     private static final int MESSAGE_REQUEST_PERMISSION = 1;
 
     private static HuaweiIdAuthService nHuaweiIdAuthService;
+
     private static AuthHuaweiId mAccount;
+
     private static Activity mActivity;
+
     private static MainViewModel mViewModel;
 
     private static Handler mHandler = new Handler() {
@@ -65,11 +63,8 @@ public class HiHealthSetup {
         mActivity = activity;
         mViewModel = viewModel;
 
-        //TODO: login
-	
-        if (mAccount != null) {
-            viewModel.onConnect();
-        }
+        // TODO: login
+
     }
 
     public static void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

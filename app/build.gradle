@@ -5,14 +5,18 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
-        applicationId "com.huawei.codelabs.hihealth.happysport"
+        applicationId "com.huawei.health.demo"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
+
+    // TODO: signingConfigs
 
 
     buildTypes {
@@ -57,7 +61,7 @@ dependencies {
     implementation "com.huawei.hms:network-grs:$rootProject.networkgrs"
     implementation 'com.huawei.hms:base:4.0.0.100'
     implementation 'com.huawei.hms:hwid:4.0.0.300'
-    implementation 'com.huawei.hms:hihealth-base:5.0.0.300'
+    implementation 'com.huawei.hms:health:5.0.3.300'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
