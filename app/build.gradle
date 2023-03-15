@@ -59,9 +59,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect:$rootProject.kotlinVersion"
     implementation "com.huawei.agconnect:agconnect-core:$rootProject.agconnectcore"
     implementation "com.huawei.hms:network-grs:$rootProject.networkgrs"
-    implementation 'com.huawei.hms:base:4.0.0.100'
-    implementation 'com.huawei.hms:hwid:4.0.0.300'
-    implementation 'com.huawei.hms:health:5.0.3.300'
+    implementation 'com.huawei.hms:base:6.9.0.300'
+    implementation 'com.huawei.hms:hwid:6.4.0.301'
+    implementation 'com.huawei.hms:health:6.9.0.300'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
