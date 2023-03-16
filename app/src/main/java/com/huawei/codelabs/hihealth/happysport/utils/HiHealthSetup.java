@@ -3,17 +3,13 @@ package com.huawei.codelabs.hihealth.happysport.utils;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
 
 import com.huawei.codelabs.hihealth.happysport.viewmodels.MainViewModel;
-import com.huawei.hms.support.hwid.HuaweiIdAuthAPIManager;
-import com.huawei.hms.support.hwid.result.AuthHuaweiId;
-import com.huawei.hms.support.hwid.result.HuaweiIdAuthResult;
-import com.huawei.hms.support.hwid.service.HuaweiIdAuthService;
+import com.huawei.hms.hihealth.SettingController;
+import com.huawei.hms.support.account.result.AuthAccount;
 
 /**
  * Setup environment.
@@ -26,31 +22,12 @@ public class HiHealthSetup {
 
     private static final int REQUEST_CODE_LOGIN = 3624;
 
-    private static final int REQUEST_CODE_PERMISSION = 4727;
+    private static SettingController mSettingController;
 
-    private static final int MESSAGE_REQUEST_PERMISSION = 1;
-
-    private static HuaweiIdAuthService nHuaweiIdAuthService;
-
-    private static AuthHuaweiId mAccount;
-
-    private static Activity mActivity;
+    private static AuthAccount mAccount;
 
     private static MainViewModel mViewModel;
 
-    private static Handler mHandler = new Handler() {
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what) {
-                case MESSAGE_REQUEST_PERMISSION:
-                    requestPermission();
-                    break;
-                default:
-                    Log.e(TAG, "invalid msg");
-            }
-        }
-
-    };
 
     /**
      * login with huawei id.
@@ -60,7 +37,6 @@ public class HiHealthSetup {
     public static void login(Activity activity, MainViewModel viewModel) {
         Log.d(TAG, "login");
 
-        mActivity = activity;
         mViewModel = viewModel;
 
         // TODO: login
@@ -72,40 +48,13 @@ public class HiHealthSetup {
             case REQUEST_CODE_LOGIN:
                 handleSignInResult(data);
                 break;
-            case REQUEST_CODE_PERMISSION:
-                break;
             default:
                 Log.e(TAG, "invalid request code");
         }
     }
 
     private static void handleSignInResult(Intent data) {
-        HuaweiIdAuthResult result = HuaweiIdAuthAPIManager.HuaweiIdAuthAPIService.parseHuaweiIdFromIntent(data);
-        Log.d(TAG, "result=" + result.getStatus() + " code= " + result.isSuccess());
-
-        if (!result.isSuccess()) {
-            Log.e(TAG, "failed to sign in");
-            return;
-        }
-
-        Log.d(TAG, "success to sign in");
-
-        mAccount = HuaweiIdAuthAPIManager.HuaweiIdAuthAPIService.parseHuaweiIdFromIntent(data).getHuaweiId();
-        if (mAccount == null) {
-            return;
-        }
-
-        mViewModel.onConnect();
-        mHandler.sendEmptyMessageDelayed(MESSAGE_REQUEST_PERMISSION, 1000);
-    }
-
-    /**
-     * Request permissions of accessing HiHealthCore.
-     */
-    private static void requestPermission() {
-        Log.d(TAG, "request permissions");
-
-        // TODO: authorization
+        // TODO: handleLoginResult
 
     }
 }
