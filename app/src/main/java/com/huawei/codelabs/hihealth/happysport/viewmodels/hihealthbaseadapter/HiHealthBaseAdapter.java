@@ -3,7 +3,7 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2020-2020. All rights reserved.
  */
 
-package com.huawei.codelabs.hihealth.happysport.viewmodels.HiHealthBaseAdapter;
+package com.huawei.codelabs.hihealth.happysport.viewmodels.hihealthbaseadapter;
 
 import android.content.Context;
 import android.os.Handler;

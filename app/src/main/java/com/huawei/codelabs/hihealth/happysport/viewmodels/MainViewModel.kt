@@ -5,13 +5,12 @@ import android.util.Log
 import androidx.lifecycle.*
 import com.huawei.codelabs.hihealth.happysport.R
 import com.huawei.codelabs.hihealth.happysport.data.*
-import com.huawei.codelabs.hihealth.happysport.viewmodels.HiHealthBaseAdapter.BaseSportData
-import com.huawei.codelabs.hihealth.happysport.viewmodels.HiHealthBaseAdapter.HiHealthBaseAdapter
-import com.huawei.codelabs.hihealth.happysport.viewmodels.HiHealthBaseAdapter.ISportListener
-import com.huawei.codelabs.hihealth.happysport.viewmodels.HiHealthBaseAdapter.WalkingSportData
+import com.huawei.codelabs.hihealth.happysport.viewmodels.hihealthbaseadapter.BaseSportData
+import com.huawei.codelabs.hihealth.happysport.viewmodels.hihealthbaseadapter.HiHealthBaseAdapter
+import com.huawei.codelabs.hihealth.happysport.viewmodels.hihealthbaseadapter.ISportListener
+import com.huawei.codelabs.hihealth.happysport.viewmodels.hihealthbaseadapter.WalkingSportData
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.util.*
 
 class MainViewModel(
     private val walkingRepository: WalkingRepository,
