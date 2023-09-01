@@ -35,7 +35,7 @@
 ## 环境要求
 * Android Studio 3.6.1 及以上版本。
 * Java SDK 1.8 及以上版本。
-* 手机Android Version7.0-13（API level 24-33），或手机系统为HarmonyOS；装有HMS Core（APK）4.2.0.300及以上版本（如果需要读取运动健康App的数据，HMS Core（APK）须为5.0.4.300及以上版本）；手机装有华为运动健康App版本号11.0.0.512及以上。
+* 手机Android Version7.0-13（API level 24-33），或手机系统为HarmonyOS；装有HMS Core（APK）4.0.2.300及以上版本（如果需要读取运动健康App的数据，HMS Core（APK）须为5.0.4.300及以上版本）；手机装有华为运动健康App版本号11.0.0.512及以上。
 
 	
 ## 技术支持
